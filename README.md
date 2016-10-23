@@ -8,7 +8,16 @@ virtualenv venv --python=python3
 pip install -r requirements.txt
 ```
 
-## Running
+## Running celery worker
+
+Requires RabbitMQ and MongoDB to be up and running.
+
+```
+. venv/bin/activate
+celery -A backend.main.celery worker -l info
+```
+
+## Running web application
 
 ```
 . venv/bin/activate
